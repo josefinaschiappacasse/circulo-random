@@ -8,10 +8,11 @@ let yspeed = 5; // La velocidad de la forma
 
 let xdirection = 4; // Izquierda o derecha
 let ydirection = 1; // De arriba a abajo
+let skecth;
 
 function setup() {
-  createCanvas(windowWidth, windowHeight);
- 
+  sketch = createCanvas(600,600);
+  sketch.parent("p5");
   noStroke();
   
   frameRate(30);
@@ -26,8 +27,6 @@ function draw() {
   xpos = xpos + xspeed * xdirection;
   ypos = ypos + yspeed * ydirection;
 
-  // Prueba para ver si la forma excede los límites de la pantalla
-  // Si lo hace, invierta su dirección multiplicando por -1
   if (xpos > width - rad || xpos < rad) {
     xdirection *= -1;
   }
@@ -36,14 +35,14 @@ function draw() {
   }
 
   fill(random(255, 30), random(255, 30), random(255, 30));
-  ellipse(xpos, ypos, 180);
- fill(255);
-  ellipse(xpos, ypos,100);
+  ellipse(xpos, ypos, 80);
+  fill(255);
+  ellipse(xpos, ypos,50);
   
   fill(random(255, 30), random(255, 30), random(255, 30));
-  ellipse( ypos,xpos, 180);
+  ellipse( ypos,xpos, 80);
   fill(255);
-  ellipse( ypos,xpos, 100);
+  ellipse( ypos,xpos, 50);
 
 }
 
